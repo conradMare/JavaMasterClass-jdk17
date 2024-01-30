@@ -3,7 +3,7 @@ public class Main {
 
         SimpleCalculator simpleCalculator = new SimpleCalculator();
 
-        simpleCalculator.setFirstNumber(5.0);
+        simpleCalculator.setFirstNumber(6.0);
         simpleCalculator.setSecondNumber(4);
 
         System.out.println("add = " + simpleCalculator.getAdditionResult());
