@@ -29,7 +29,7 @@ public class Main {
         Character[] characterArray = {'a', 'b', 'c', 'd'};
         System.out.println(Arrays.toString(characterArray));
 
-        var ourList = List.of(1, 2, 3, 4, 5);
+        var ourList = List.of(1, 2, 3, 4, 5, 6);
         System.out.println(ourList);
     }
 
