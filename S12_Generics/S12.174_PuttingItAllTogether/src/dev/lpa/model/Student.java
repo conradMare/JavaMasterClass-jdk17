@@ -22,7 +22,7 @@ public class Student implements QueryItem, Comparable<Student> {
         int lastNameIndex = random.nextInt(65, 91);
         name = firstNames[random.nextInt(5)] + " " + (char) lastNameIndex;
         course = courses[random.nextInt(3)];
-        yearStarted = random.nextInt(2018, 2023);
+        yearStarted = random.nextInt(2020, 2024);
     }
 
     @Override
