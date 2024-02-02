@@ -53,6 +53,7 @@ public class RunMethods {
         sortIt(storeEmployees, c2);
         sortIt(storeEmployees, c3);
         sortIt(storeEmployees, c4);
+//        Below -> replaced with lambda expression
         sortIt(storeEmployees, (o1, o2) -> o1.getName().compareTo(o2.getName()));
     }
 
@@ -65,5 +66,4 @@ public class RunMethods {
             System.out.println(employee);
         }
     }
-
 }
