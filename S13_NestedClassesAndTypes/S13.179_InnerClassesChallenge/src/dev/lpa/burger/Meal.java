@@ -79,7 +79,6 @@ public class Meal {
                     default -> 0;
                 };
             }
-
         }
 
         private List<Item> toppings = new ArrayList<>();
@@ -122,6 +121,5 @@ public class Meal {
 
             return itemized.toString();
         }
-
     }
 }
