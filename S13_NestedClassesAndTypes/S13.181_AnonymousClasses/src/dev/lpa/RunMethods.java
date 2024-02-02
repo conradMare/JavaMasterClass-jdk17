@@ -18,7 +18,7 @@ public class RunMethods {
                 new StoreEmployee(10515, "Joe", 2021,
                         "Walmart"),
                 new StoreEmployee(10105, "Tom", 2020,
-                        "Macys"),
+                        "Macy's"),
                 new StoreEmployee(10215, "Marty", 2018,
                         "Walmart"),
                 new StoreEmployee(10322, "Bud", 2016,
