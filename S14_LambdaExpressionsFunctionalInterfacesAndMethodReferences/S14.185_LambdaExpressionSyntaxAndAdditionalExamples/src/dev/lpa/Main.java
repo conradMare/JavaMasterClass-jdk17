@@ -19,10 +19,14 @@ public class Main {
 
         System.out.println("-------");
         String prefix = "nato";
+//        String myString = "enclosing Method's myString";
         list.forEach((var myString) -> {
             char first = myString.charAt(0);
             System.out.println(prefix + " " + myString + " means " + first);
         });
+//        prefix = "NATO";
 
+//        Compiler Error -> 'myString' goes outside of scope:
+//        System.out.println(myString);
     }
 }
