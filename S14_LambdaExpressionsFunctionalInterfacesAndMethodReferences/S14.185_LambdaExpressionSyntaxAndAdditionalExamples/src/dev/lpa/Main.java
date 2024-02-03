@@ -14,10 +14,10 @@ public class Main {
             System.out.println(s);
         }
 
-        System.out.println("-------");
+        System.out.println("-".repeat(30));
         list.forEach((var myString) -> System.out.println(myString));
 
-        System.out.println("-------");
+        System.out.println("-".repeat(30));
         String prefix = "nato";
 //        String myString = "enclosing Method's myString";
         list.forEach((var myString) -> {
