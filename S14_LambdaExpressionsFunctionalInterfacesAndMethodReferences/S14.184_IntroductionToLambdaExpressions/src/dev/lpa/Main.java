@@ -33,6 +33,7 @@ public class Main {
             }
         };
 
+//        Lambda Expression:
         people.sort((o1, o2) -> o1.lastName().compareTo(o2.lastName()));
         System.out.println(people);
 
