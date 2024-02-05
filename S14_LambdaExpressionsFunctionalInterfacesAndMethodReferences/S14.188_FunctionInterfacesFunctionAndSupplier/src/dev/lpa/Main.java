@@ -60,7 +60,7 @@ public class Main {
         list.addAll(List.of("echo", "easy", "earnest"));
         list.forEach(s -> System.out.println(s));
 
-        System.out.println("-------");
+        System.out.println("-".repeat(30));
         list.removeIf(s -> s.startsWith("ea"));
         list.forEach(s -> System.out.println(s));
 
@@ -91,7 +91,6 @@ public class Main {
         String[] randomList = randomlySelectedValues(15, names,
                 () -> new Random().nextInt(0, names.length));
         System.out.println(Arrays.toString(randomList));
-
     }
 
     public static <T> T calculator(BinaryOperator<T> function, T value1, T value2) {
