@@ -19,10 +19,10 @@ public class Main {
             System.out.println(s);
         }
 
-        System.out.println("-------");
+        System.out.println("-".repeat(30));
         list.forEach((var myString) -> System.out.println(myString));
 
-        System.out.println("-------");
+        System.out.println("-".repeat(30));
         String prefix = "nato";
         list.forEach((var myString) -> {
             char first = myString.charAt(0);
@@ -48,7 +48,7 @@ public class Main {
         var firstPoint = coords.get(0);
         processPoint(firstPoint[0], firstPoint[1], p1);
 
-        System.out.println("-------");
+        System.out.println("-".repeat(30));
         coords.forEach(s -> processPoint(s[0], s[1], p1));
         coords.forEach(s -> processPoint(s[0], s[1],
                 (lat, lng) ->
@@ -65,7 +65,7 @@ public class Main {
         list.forEach(s -> System.out.println(s));
 
         list.replaceAll(s -> s.charAt(0) + " - " + s.toUpperCase());
-        System.out.println("-------");
+        System.out.println("-".repeat(30));
         list.forEach(s -> System.out.println(s));
 
         String[] emptyStrings = new String[10];
