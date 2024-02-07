@@ -33,7 +33,7 @@ public class Main {
         Collections.addAll(cards, cardArray);
         Card.printDeck(cards, "Card Collection with Aces added", 2);
 
-//        This method copies elements from one list to another, doesn't return a copy of the list.
+//        This method copies elements from one list to another, but doesn't return a copy of the list.
 //        Elements are being assigned to the destination list VS. a copy being made
         Collections.copy(cards, kingsOfClubs);
         Card.printDeck(cards, "Card Collection with Kings copied", 2);
@@ -42,6 +42,5 @@ public class Main {
 //        If in need of a modifiable list, make a call to the copyOf method and pass it to a list constructor or use addAll for example.
         cards = List.copyOf(kingsOfClubs);
         Card.printDeck(cards, "List Copy of Kings", 1);
-
     }
 }
