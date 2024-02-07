@@ -43,7 +43,7 @@ public record Card(Suit suit, String face, int rank) {
 
     public static List<Card> getStandardDeck() {
 
-//        Value 52 = now value of deck of cards
+//        Value 52 = known value of deck of cards
         List<Card> deck = new ArrayList<>(52);
         for (Suit suit : Suit.values()) {
 //            NOTE: NESTED LOOPS
