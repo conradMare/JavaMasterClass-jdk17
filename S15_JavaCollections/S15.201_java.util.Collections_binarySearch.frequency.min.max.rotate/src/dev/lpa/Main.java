@@ -70,7 +70,7 @@ public class Main {
 //        could pass a list of comparable elements or can pass a list with a separate comparator
 //        which should match the ways the elements are sorted.
 //        Both methods take an element, the element that should be searched for, which should be
-//        the same type as the element of the list passed
+//        the same type as the element of the list passed.
 
 //        NOTE: LIST MUST BE SORTED BEFORE EXECUTING binarySearch!!!
 
@@ -85,7 +85,7 @@ public class Main {
 //        replaceAll method on collections class (example below), is much more limited than that of the List interface
 //        which allows writing of a function (a lambda expression) to do a global replacement of all
 //        elements. On the collections class, the replaceAll method requires a replacement of one or more
-//        instances with another
+//        instances with another.
 
         Card tenOfClubs = Card.getNumericCard(Card.Suit.CLUB, 10);
         Collections.replaceAll(deck, tenOfClubs, tenOfHearts);
