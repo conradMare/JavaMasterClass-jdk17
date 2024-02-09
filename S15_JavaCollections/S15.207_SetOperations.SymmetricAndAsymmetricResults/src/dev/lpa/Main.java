@@ -31,29 +31,32 @@ public class Main {
         Set<Contact> unionAB = new HashSet<>();
         unionAB.addAll(emailContacts);
         unionAB.addAll(phoneContacts);
+//        printData("(A \u222A B) Union of emails (A) with phones (B)", unionAB);
         printData("(A ∪ B) Union of emails (A) with phones (B)", unionAB);
 
 //        Performing intersect with two Sets:
         Set<Contact> intersectAB = new HashSet<>(emailContacts);
         intersectAB.retainAll(phoneContacts);
-        printData("(A ∩ B) Intersects emails (A) and phones (B)",
+//        printData("(A \u2229 B) Intersect emails (A) and phones (B)",
+//                intersectAB);
+        printData("(A ∩ B) Intersect emails (A) and phones (B)",
                 intersectAB);
 
 //        Intersect order change (displaying phone not email):
         Set<Contact> intersectBA = new HashSet<>(phoneContacts);
         intersectBA.retainAll(emailContacts);
-        printData("(B ∩ A) Intersects phones (B) and emails (A)",
+        printData("(B ∩ A) Intersect phones (B) and emails (A)",
                 intersectBA);
 
 //        Asymmetric Differences:
         Set<Contact> AMinusB = new HashSet<>(emailContacts);
         AMinusB.removeAll(phoneContacts);
-        printData("(A - B) Intersects emails (A) and phones (B)",
+        printData("(A - B) Intersect emails (A) and phones (B)",
                 AMinusB);
 
         Set<Contact> BMinusA = new HashSet<>(phoneContacts);
         BMinusA.removeAll(emailContacts);
-        printData("(B - A) Intersects phones (B) and email (A)",
+        printData("(B - A) Intersect phones (B) and email (A)",
                 BMinusA);
 
 //        Symmetric Differences:
@@ -61,9 +64,9 @@ public class Main {
         symmetricDif.addAll(BMinusA);
         printData("Symmetric Difference: phones and emails", symmetricDif);
 
-        Set<Contact> symmetricDiff2 = new HashSet<>(unionAB);
-        symmetricDiff2.removeAll(intersectAB);
-        printData("Symmetric Difference: phones and emails", symmetricDiff2);
+        Set<Contact> symmetricDif2 = new HashSet<>(unionAB);
+        symmetricDif2.removeAll(intersectAB);
+        printData("Symmetric Difference: phones and emails", symmetricDif2);
     }
 
     public static void printData(String header, Collection<Contact> contacts) {

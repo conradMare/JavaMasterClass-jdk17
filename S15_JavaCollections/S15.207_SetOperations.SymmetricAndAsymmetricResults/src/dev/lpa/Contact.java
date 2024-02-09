@@ -68,7 +68,7 @@ public class Contact {
 //        return Objects.hash(getName());
 //    }
 
-    // equals() and hashCode() -> IntelliJ default
+//    equals() and hashCode() -> IntelliJ default
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
