@@ -53,7 +53,7 @@ public class Main {
     private static void sortAndPrint(String header, Collection<Task> collection,
                                      Comparator<Task> sorter) {
 
-        String lineSeparator = "_".repeat(90);
+        String lineSeparator = "-".repeat(90);
         System.out.println(lineSeparator);
         System.out.println(header);
         System.out.println(lineSeparator);
