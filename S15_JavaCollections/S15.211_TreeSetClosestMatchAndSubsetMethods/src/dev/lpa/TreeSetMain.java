@@ -36,8 +36,8 @@ public class TreeSetMain {
         Contact last = fullSet.last();
 
         System.out.println("-".repeat(45));
-        System.out.printf("min = %s, first=%s %n", min.getName(), first.getName());
-        System.out.printf("max = %s, last=%s %n", max.getName(), last.getName());
+        System.out.printf("min = %s, first = %s %n", min.getName(), first.getName());
+        System.out.printf("max = %s, last= %s %n", max.getName(), last.getName());
         System.out.println("-".repeat(45));
 
         NavigableSet<Contact> copiedSet = new TreeSet<>(fullSet);
@@ -74,6 +74,7 @@ public class TreeSetMain {
         fullSet.forEach(System.out::println);
         System.out.println("-".repeat(45));
 
+//        Overloaded method to change the default behavior (boolean value == true):
         Contact marion = new Contact("Maid Marion");
         var headSet = fullSet.headSet(marion, true);
         headSet.forEach(System.out::println);
@@ -89,6 +90,5 @@ public class TreeSetMain {
         var subset = fullSet.subSet(
                 linus, false, marion, true);
         subset.forEach(System.out::println);
-
     }
 }
