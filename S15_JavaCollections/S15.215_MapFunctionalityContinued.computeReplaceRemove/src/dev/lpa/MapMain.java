@@ -69,10 +69,11 @@ public class MapMain {
         }
         contacts.forEach((k, v) -> System.out.println("key = " + k + ", value = " + v));
 
-//        Merge method (introduced in jdk8) -> Also takes a key and a value, but the third parameter is a BiFunction
-//        interface, meaning it's a target for a lambda expression which takes two parameters and returns a result:
         System.out.println("-".repeat(45));
         contacts.clear();
+
+//        Merge method (introduced in jdk8) -> Also takes a key and a value, but the third parameter is a BiFunction
+//        interface, meaning it's a target for a lambda expression which takes two parameters and returns a result:
         fullList.forEach(contact -> contacts.merge(contact.getName(), contact,
 //                (previous, current) -> {
 //                    System.out.println("prev: " + previous + " : current " + current);
@@ -90,23 +91,26 @@ public class MapMain {
 
         System.out.println("-".repeat(45));
         contacts.clear();
+
         fullList.forEach(contact -> contacts.merge(contact.getName(), contact,
                 Contact::mergeContactData
         ));
         contacts.forEach((k, v) -> System.out.println("key = " + k + ", value = " + v));
 
         System.out.println("-".repeat(45));
-        for (String contactName : new String[] {"Daisy Duck", "Daffy Duck",
+        for (String contactName : new String[]{"Daisy Duck", "Daffy Duck",
                 "Scrooge McDuck"}) {
             contacts.computeIfAbsent(contactName, k -> new Contact(k));
         }
         contacts.forEach((k, v) -> System.out.println("key = " + k + ", value = " + v));
 
         System.out.println("-".repeat(45));
-        for (String contactName : new String[] {"Daisy Duck", "Daffy Duck",
+        for (String contactName : new String[]{"Daisy Duck", "Daffy Duck",
                 "Scrooge McDuck"}) {
             contacts.computeIfPresent(contactName, (k, v) -> {
-                v.addEmail("Fun Place"); return v; });
+                v.addEmail("Fun Place");
+                return v;
+            });
         }
         contacts.forEach((k, v) -> System.out.println("key = " + k + ", value = " + v));
 
@@ -119,6 +123,7 @@ public class MapMain {
         contacts.forEach((k, v) -> System.out.println("key = " + k + ", value = " + v));
 
         System.out.println("-".repeat(45));
+
         Contact daisy = new Contact("Daisy Jane Duck", "daisyj@duck.com");
 
         Contact replacedContact = contacts.replace("Daisy Duck", daisy);
