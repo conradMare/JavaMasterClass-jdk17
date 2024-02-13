@@ -19,7 +19,8 @@ public class Main {
 
         while (true) {
             String direction = scanner.nextLine().trim().toUpperCase().substring(0, 1);
-            if (direction.equals("Q")) break;
+            if (direction.equals("Q"))
+                break;
             game.move(direction);
         }
     }
