@@ -10,24 +10,31 @@ public class MapViewsMain {
         ContactData.getData("phone").forEach(c -> contacts.put(c.getName(), c));
         ContactData.getData("email").forEach(c -> contacts.put(c.getName(), c));
 
+//        New local variable:
         Set<String> keysView = contacts.keySet();
         System.out.println(keysView);
 
+//        TreeSet orders the keys:
         Set<String> copyOfKeys = new TreeSet<>(contacts.keySet());
         System.out.println(copyOfKeys);
 
+//        Checking if the element exists by key:
         if (contacts.containsKey("Linus Van Pelt")) {
             System.out.println("Linus and I go way back, so of course I have info");
         }
 
+//        Using keySet view to remove elements from the map:
+//        ("Daffy Duck" isn't in the keySet, but isn't in the Map as well)
         keysView.remove("Daffy Duck");
         System.out.println(keysView);
         contacts.forEach((k, v) -> System.out.println(v));
 
+//        "Linus van Pelt" is removed from copyOfKeys, since this is a copy it had no effect on the original Map:
         copyOfKeys.remove("Linus Van Pelt");
         System.out.println(copyOfKeys);
         contacts.forEach((k, v) -> System.out.println(v));
 
+//        retainAll keeps only the four names specified in the keySet:
         keysView.retainAll(List.of("Linus Van Pelt", "Charlie Brown",
                 "Robin Hood", "Mickey Mouse"));
         System.out.println(keysView);
@@ -36,10 +43,19 @@ public class MapViewsMain {
         keysView.clear();
         System.out.println(contacts);
 
+//        .add can't be used on keysView:
+//        (Adding just a key is only part of the data need -. key + value required)
+//        keysView.add("Daffy Duck");
+//        System.out.println(contacts);
+
+//        Re-adding contacts:
+//        ((Printing keysView set, not Map) -> Don't have to execute the keySet method again,
+//        to get the refreshed data. Powerful way to manipulate elements in the Map)
         ContactData.getData("email").forEach(c -> contacts.put(c.getName(), c));
         ContactData.getData("phone").forEach(c -> contacts.put(c.getName(), c));
         System.out.println(keysView);
 
+//        Able to change data with the values view, which is reflected in the keysView:
         var values = contacts.values();
         values.forEach(System.out::println);
 
@@ -64,6 +80,8 @@ public class MapViewsMain {
             System.out.println("Duplicate Values are in my Map");
         }
 
+//        key value pairs are stored in instances that implement Map.Entry, in the HashMap this is the node,
+//        can get a set of these nodes and examine them:
         var nodeSet = contacts.entrySet();
         for (var node : nodeSet) {
             System.out.println(nodeSet.getClass().getName());
@@ -73,6 +91,5 @@ public class MapViewsMain {
                         node.getValue());
             }
         }
-
     }
 }
