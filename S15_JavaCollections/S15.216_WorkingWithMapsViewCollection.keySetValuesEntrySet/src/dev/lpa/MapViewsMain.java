@@ -24,7 +24,7 @@ public class MapViewsMain {
         }
 
 //        Using keySet view to remove elements from the map:
-//        ("Daffy Duck" isn't in the keySet, but isn't in the Map as well)
+//        ("Daffy Duck" isn't in the keySet anymore, but isn't in the Map either)
         keysView.remove("Daffy Duck");
         System.out.println(keysView);
         contacts.forEach((k, v) -> System.out.println(v));
@@ -34,7 +34,7 @@ public class MapViewsMain {
         System.out.println(copyOfKeys);
         contacts.forEach((k, v) -> System.out.println(v));
 
-//        retainAll keeps only the four names specified in the keySet:
+//        retainAll keeps only the four names specified, in the keySet:
         keysView.retainAll(List.of("Linus Van Pelt", "Charlie Brown",
                 "Robin Hood", "Mickey Mouse"));
         System.out.println(keysView);
@@ -44,7 +44,7 @@ public class MapViewsMain {
         System.out.println(contacts);
 
 //        .add can't be used on keysView:
-//        (Adding just a key is only part of the data need -. key + value required)
+//        (Adding just a key is only part of the data needed - key + value required)
 //        keysView.add("Daffy Duck");
 //        System.out.println(contacts);
 
@@ -80,8 +80,8 @@ public class MapViewsMain {
             System.out.println("Duplicate Values are in my Map");
         }
 
-//        key value pairs are stored in instances that implement Map.Entry, in the HashMap this is the node,
-//        can get a set of these nodes and examine them:
+//        key value pairs are stored in instances that implement 'Map.Entry', in the HashMap this is the node.
+//        Can get a set of these nodes and examine them:
         var nodeSet = contacts.entrySet();
         for (var node : nodeSet) {
             System.out.println(nodeSet.getClass().getName());
