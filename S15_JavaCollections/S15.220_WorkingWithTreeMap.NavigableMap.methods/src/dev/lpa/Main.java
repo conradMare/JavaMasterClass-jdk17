@@ -33,7 +33,7 @@ public class Main {
 
         NavigableMap<LocalDate,List<Purchase>> datedPurchases = new TreeMap<>();
 
-        for (Purchase p : purchases.values() ) {
+        for (Purchase p : purchases.values()) {
             datedPurchases.compute(p.purchaseDate(),
                     (pdate, plist) -> {
                         List<Purchase> list =
@@ -65,20 +65,17 @@ public class Main {
         LocalDate lastDate = datedPurchases.lastKey();
         var previousEntry = datedPurchases.lastEntry();
 
+//            Below will result in an infinite loop if left this way:
+//            (the lower method on Set always returns the element that was less than the method argument,
+//              but the floor method gets the value that's less than or equal to the method argument,
+//              this is true for these methods as well. In this case the floor entry method just keeps
+//              returning the same element each time, as does the floor key, because it finds an element whose
+//              key is equal to that key)
         while (previousEntry != null) {
             List<Purchase> lastDaysData = previousEntry.getValue();
             System.out.println(lastDate + " purchases : " + lastDaysData.size());
 
-//            Will result in an infinite loop:
-//            ( the lower method on set always returns the element that was less than the method argument,
-//              but the floor method gets the value that's less than or equal to the method argument,
-//              this is true for these methods as well. In this case the floor entry method just keeps
-//              returning the same element each time, as does the floor key, because it finds an element whose
-//              key is equal to that key )
-//            LocalDate prevDate = datedPurchases.lowerKey(lastDate);
-//            previousEntry = datedPurchases.lowerEntry(lastDate);
-//            lastDate = prevDate;
-
+//            Needs to be added:
             LocalDate prevDate = datedPurchases.lowerKey(lastDate);
             previousEntry = datedPurchases.lowerEntry(lastDate);
             lastDate = prevDate;
@@ -103,11 +100,12 @@ public class Main {
             nextEntry = reversed.pollFirstEntry();
             firstDate = nextDate;
         }
+
         System.out.println("-".repeat(45));
         datedPurchases.forEach((key, value) -> System.out.println(key + ": " + value));
 
 //        Two IMPORTANT things to remember:
-//        1 - Need to understand that the poll methods (pollFirstEntry and pollLastEntry) remove data from the map
+//        1 - Need to understand that the poll methods (pollFirstEntry and pollLastEntry) removes data from the map
 //            on each subsequent call.
 //        2 - The reverseMap is a view, the true source is the datedPurchases map.
 //        When executing the poll methods on the reverse map, those operations are actually occurring on the
@@ -140,9 +138,9 @@ public class Main {
         periodData.forEach((key, value) -> {
             System.out.println(key + ": " + value);
             for (Purchase p : value) {
-                weeklyCounts.merge(p.courseId(), 1, (prev, current) -> {
-                    return prev + current;
-                });
+//                weeklyCounts.merge(p.courseId(), 1, (prev, current) -> {
+//                    return prev + current;
+                weeklyCounts.merge(p.courseId(), 1, Integer::sum);
             }
         });
         System.out.printf("Week %d Purchases = %s%n", period, weeklyCounts);
