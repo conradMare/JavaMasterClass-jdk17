@@ -12,7 +12,6 @@ record Purchase (String courseId, int studentId, double price, int yr, int dayOf
     public LocalDate purchaseDate() {
         return LocalDate.ofYearDay(yr, dayOfYear);
     }
-
 }
 
 public class Student {
