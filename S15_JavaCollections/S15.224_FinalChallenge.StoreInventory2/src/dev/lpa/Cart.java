@@ -55,7 +55,6 @@ public class Cart {
             products.remove(item.getProduct().sku());
             System.out.printf("Item [%s] removed from basket%n",
                     item.getProduct().name());
-
         } else {
             products.merge(item.getProduct().sku(), qty,
                     (oldVal, newVal) -> oldVal - newVal);
@@ -68,7 +67,7 @@ public class Cart {
 
         double total = 0;
         System.out.println("-".repeat(90));
-        System.out.println("Thank you for your sale: ");
+        System.out.println("Thank you for your purchase: ");
         for (var cartItem : products.entrySet()) {
             var item = inventory.get(cartItem.getKey());
             int qty = cartItem.getValue();
@@ -85,9 +84,9 @@ public class Cart {
     @Override
     public String toString() {
         return "Cart{" +
-                "id=" + id +
-                ", cartDate=" + cartDate +
-                ", products=" + products +
+                "id = " + id +
+                ", cartDate = " + cartDate +
+                ", products = " + products +
                 '}';
     }
 }
