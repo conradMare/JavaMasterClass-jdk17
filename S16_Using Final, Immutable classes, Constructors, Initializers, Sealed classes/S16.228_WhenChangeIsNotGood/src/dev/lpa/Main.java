@@ -5,7 +5,6 @@ import dev.lpa.generic.BaseClass;
 import external.util.Logger;
 
 public class Main {
-
     public static void main(String[] args) {
 
         BaseClass parent = new BaseClass();
