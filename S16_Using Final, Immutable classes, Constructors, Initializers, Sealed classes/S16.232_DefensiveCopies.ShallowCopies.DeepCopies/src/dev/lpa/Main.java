@@ -5,6 +5,7 @@ import java.util.Arrays;
 record Person(String name, String dob, Person[] kids) {
 
     public Person(Person p) {
+//        Canonical, or generated, constructor:
         this(p.name, p.dob,
                 p.kids == null ? null : Arrays.copyOf(p.kids, p.kids.length));
     }
