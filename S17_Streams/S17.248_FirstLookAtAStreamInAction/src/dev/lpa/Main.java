@@ -24,7 +24,7 @@ public class Main {
         for (int i = 0; i < 15; i++) {
             System.out.println(bingoPool.get(i));
         }
-        System.out.println("-".repeat(45));
+        System.out.println("----------------------------------");
 
 //        List<String> firstOnes = bingoPool.subList(0, 15);
         List<String> firstOnes = new ArrayList<>(bingoPool.subList(0, 15));
@@ -37,12 +37,12 @@ public class Main {
             }
             return s;
         });
-        System.out.println("-".repeat(45));
+        System.out.println("\n----------------------------------");
 
         for (int i = 0; i < 15; i++) {
             System.out.println(bingoPool.get(i));
         }
-        System.out.println("-".repeat(45));
+        System.out.println("----------------------------------");
 
         bingoPool.stream()
                 .limit(15)
@@ -51,7 +51,7 @@ public class Main {
                 .sorted()
                 .forEach(s -> System.out.print(s + " "));
 
-        System.out.println("-".repeat(45));
+        System.out.println("\n----------------------------------");
 
         for (int i = 0; i < 15; i++) {
             System.out.println(bingoPool.get(i));
