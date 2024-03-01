@@ -24,7 +24,7 @@ public class Main {
         for (int i = 0; i < 15; i++) {
             System.out.println(bingoPool.get(i));
         }
-        System.out.println("----------------------------------");
+        System.out.println("------------------------------------");
 
 //        List<String> firstOnes = bingoPool.subList(0, 15);
         List<String> firstOnes = new ArrayList<>(bingoPool.subList(0, 15));
@@ -42,21 +42,16 @@ public class Main {
         for (int i = 0; i < 15; i++) {
             System.out.println(bingoPool.get(i));
         }
-        System.out.println("----------------------------------");
+        System.out.println("------------------------------------");
 
-        bingoPool.stream()
-//                Limiting the number of elements from the stream:
+        var tempStream = bingoPool.stream()
                 .limit(15)
                 .filter(s -> s.indexOf('G') == 0 || s.indexOf("O") == 0)
-//                Map -> similar to the replace all method on collections:
                 .map(s -> s.charAt(0) + "-" + s.substring(1))
-                .sorted()
-                .forEach(s -> System.out.print(s + " "));
+                .sorted();
+//                .forEach(s -> System.out.print(s + " "));
 
+        tempStream.forEach(s -> System.out.print(s + " "));
         System.out.println("\n----------------------------------");
-
-        for (int i = 0; i < 15; i++) {
-            System.out.println(bingoPool.get(i));
-        }
     }
 }
