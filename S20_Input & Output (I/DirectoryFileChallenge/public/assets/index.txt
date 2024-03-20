@@ -1,0 +1,8 @@
+Directory Contents: 
+C:\Users\phill\OneDrive\Desktop\Java_Masterclass\JMC_17\JavaMasterClass-jdk17\S20_Input & Output (I\DirectoryFileChallenge\public\assets
+C:\Users\phill\OneDrive\Desktop\Java_Masterclass\JMC_17\JavaMasterClass-jdk17\S20_Input & Output (I\DirectoryFileChallenge\public\assets\icons
+C:\Users\phill\OneDrive\Desktop\Java_Masterclass\JMC_17\JavaMasterClass-jdk17\S20_Input & Output (I\DirectoryFileChallenge\public\assets\icons\index.txt
+C:\Users\phill\OneDrive\Desktop\Java_Masterclass\JMC_17\JavaMasterClass-jdk17\S20_Input & Output (I\DirectoryFileChallenge\public\assets\icons\indexCopy.txt
+C:\Users\phill\OneDrive\Desktop\Java_Masterclass\JMC_17\JavaMasterClass-jdk17\S20_Input & Output (I\DirectoryFileChallenge\public\assets\index.txt
+C:\Users\phill\OneDrive\Desktop\Java_Masterclass\JMC_17\JavaMasterClass-jdk17\S20_Input & Output (I\DirectoryFileChallenge\public\assets\indexCopy.txt
+Generated: 2024-03-20T06:17:42.046005

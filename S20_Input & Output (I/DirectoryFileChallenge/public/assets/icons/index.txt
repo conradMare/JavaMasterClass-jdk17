@@ -1,0 +1,5 @@
+Directory Contents: 
+C:\Users\phill\OneDrive\Desktop\Java_Masterclass\JMC_17\JavaMasterClass-jdk17\S20_Input & Output (I\DirectoryFileChallenge\public\assets\icons
+C:\Users\phill\OneDrive\Desktop\Java_Masterclass\JMC_17\JavaMasterClass-jdk17\S20_Input & Output (I\DirectoryFileChallenge\public\assets\icons\index.txt
+C:\Users\phill\OneDrive\Desktop\Java_Masterclass\JMC_17\JavaMasterClass-jdk17\S20_Input & Output (I\DirectoryFileChallenge\public\assets\icons\indexCopy.txt
+Generated: 2024-03-20T06:17:42.047002200
