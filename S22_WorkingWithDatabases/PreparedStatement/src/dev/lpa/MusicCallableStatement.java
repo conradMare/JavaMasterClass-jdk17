@@ -51,7 +51,7 @@ public class MusicCallableStatement {
                 System.getenv("MYSQL_PASS"));
         ) {
             CallableStatement cs = connection.prepareCall(
-                    "CALL music.addAlbum(?,?,?)");
+                    "CALL music.addAlbumInOutCounts(?,?,?,?)");
 
             albums.forEach((artist, albumMap) -> {
                 albumMap.forEach((album, songs) -> {
@@ -59,7 +59,11 @@ public class MusicCallableStatement {
                         cs.setString(1, artist);
                         cs.setString(2, album);
                         cs.setString(3, songs);
+                        cs.setInt(4, 10);
+                        cs.registerOutParameter(4, Types.INTEGER);
                         cs.execute();
+                        System.out.printf("%d songs were added for %s%n",
+                                cs.getInt(4), album);
 
                     } catch (SQLException e) {
                         System.err.println(e.getErrorCode() + " " + e.getMessage());
